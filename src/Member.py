@@ -1,10 +1,11 @@
 import pygame
-import Init
+from os.path import join
 
 class Member:
-    def __init__(self, picturePath="/home/pi/"):
-        self.picturePath = picturePath
+    def __init__(self, picName=".png", folderName="Pictures"):
+        self.picName = picName
+        self.folderName = folderName
         
     def createPicture(self):
-        return 0
-                
+        picture = pygame.image.load(join(self.folderName, self.picName))
+        
