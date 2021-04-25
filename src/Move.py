@@ -1,22 +1,16 @@
-from Game import player
-from Init import (
-    x, y
-)
+# from Init import player
 
-class Move:
-    def Up(self):
-        global y
-        y += 1
-        player.checkCollision(x, y)
-        
-    def Left(self):
-        global x
-        x -= 1
-        player.checkCollision(x, y)
-        
-    def Right(self):
-        global x
-        x += 1
-        player.checkCollision(x, y)
-        
-move2 = Move()
+def Up(player, x, y):
+    y += 1
+    player.checkCollision(x, y)
+    return y
+
+def Left(player):
+    global x
+    x -= 1
+    player.checkCollision(x, y)
+
+def Right(player):
+    global x
+    x += 1
+    player.checkCollision(x, y)

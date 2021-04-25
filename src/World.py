@@ -1,15 +1,14 @@
 import pygame
-from Game import player
 from random import (
     randrange, choice
 )
 from os.path import join
-from Init import (
+from Game import (
     x, y, facingAngle, display
 )
 
 class World:
-    def __init__(self, x, y, facingAngle=9, pictureFolder="pictures", grassblock_name="grass_texture.jpeg", dirtblock_name="dirt_texture.jpeg"):
+    def __init__(self, x, y, facingAngle=9, pictureFolder="src", grassblock_name="grass_texture.jpeg", dirtblock_name="dirt_texture.jpeg"):
         self.x = x
         self.y = y
         self.facingAngle = randrange(0, 360)
@@ -21,11 +20,11 @@ class World:
         self.grassblock_name = grassblock_name
         self.dirtblock_name = dirtblock_name
         self.grassblock = pygame.image.load(# join(self.pictureFolder, self.grassblock_name)
-                                            "/home/pi/Genious Maths Farts Game/genius-maths-fart-game/pictures/grass_texture.jpeg"
+                                            "/home/pi/git/genius-maths-fart-game/src/pictures/grass_texture.jpeg"
         )
         self.dirtblock = pygame.image.load(
             # join(self.pictureFolder, self.dirtblock_name)
-            "/home/pi/Genious Maths Farts Game/genius-maths-fart-game/pictures/dirt_texture.jpeg"
+            "/home/pi/git/genius-maths-fart-game/src/pictures/dirt_texture.jpeg"
         )
         self.textureChoice = [self.grassblock, self.dirtblock]
         
