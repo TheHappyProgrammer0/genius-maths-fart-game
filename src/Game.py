@@ -30,3 +30,4 @@ game = Game()
 player = game.Player(x, y)
 
 #test
+# test2
