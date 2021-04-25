@@ -1,24 +1,22 @@
-from Init import(
+from Game import player
+from Init import (
     x, y
 )
-import pygame
 
 class Move:
-    
-    global x
-    global y
-    
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        
     def Up(self):
+        global y
         y += 1
-                
+        player.checkCollision(x, y)
+        
     def Left(self):
+        global x
         x -= 1
+        player.checkCollision(x, y)
         
     def Right(self):
+        global x
         x += 1
+        player.checkCollision(x, y)
         
-move = Move(x, y)
+move2 = Move()
