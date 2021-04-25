@@ -1,22 +1,27 @@
-from Move import Move
+import pygame
+from random import randrange
+import Move
 
-class Game:   
-    class Player:      
+class Game_class:   
+    class Player:            
         def __init__(self, x, y, health=100, facingAngle=0):
             self.x = x
             self.y = y
             self.health = health
             self.facingAngle = facingAngle
-            self.move2 = Move()
-                        
+            self.Move = Move
+                                    
         def move(self, dir):
+            global x
+            global y
+            
             self.dir = dir            
             if self.dir == "up":
-                self.move2.Up()
+                self.x = self.Move.Up(player, x, y)
             elif self.dir == "left":
-                self.move2.Left()
+                self.Move.Left(player)
             elif self.dir == "right":
-                self.move2.Right()
+                self.Move.Right()
             
         def checkCollision(self, x, y):
             return
@@ -29,4 +34,24 @@ class Game:
         self.y = y
         self.playerHealth = playerHealth
         self.facingAngle = facingAngle
-        self.player = self.Player(x, y, playerHealth, facingAngle)
+        self.player = Game_class.Player(x, y, playerHealth, facingAngle)
+
+
+x = 0
+y = 0
+
+health = 100
+
+WIDTH = 900
+HEIGHT = 1200
+
+screen = pygame.display
+display = pygame.display.set_mode((WIDTH, HEIGHT))
+screen.set_caption("Genius Maths Farts Game")
+
+facingAngle = randrange(0, 365)
+
+game = Game_class(x, y, health, facingAngle)
+player = game.player
+
+del WIDTH, HEIGHT

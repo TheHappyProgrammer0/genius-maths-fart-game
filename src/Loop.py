@@ -2,7 +2,7 @@ import socket
 import pygame
 import Member
 from World import World
-from Init import player
+from Game import player
 
 def Loop(in_game):
     while in_game:

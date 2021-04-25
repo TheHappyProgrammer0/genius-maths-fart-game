@@ -3,7 +3,7 @@ from random import (
     randrange, choice
 )
 from os.path import join
-from Init import (
+from Game import (
     x, y, facingAngle, display
 )
 
