@@ -1,7 +1,7 @@
 from Init import (
-    init, x, y 
+    x, y 
 )           
-from Move import move 
+from Move import move2
 from random import randrange
 
 class Game:
@@ -10,20 +10,21 @@ class Game:
             self.x = x
             self.y = y
             self.health = health
-            self.move = move
-            
+                        
         def Move(self, dir):
-            if self.dir == up:
-                self.dir == move.Up()
+            self.dir = dir            
+            if self.dir == "up":
+                move2.Up()
+            elif self.dir == "left":
+                move2.Left()
+            elif self.dir == "right":
+                move2.Right()
             
         def checkCollision(self, x, y):
-            return 0
+            return
         
         def checkHealth(self):
-            return 0     
-                
-    def setUp(self):
-        init.Display()
-        init.Vars()
+            return
         
 game = Game()  
+player = game.Player(x, y)
