@@ -16,6 +16,7 @@ screen.set_caption("Genius Maths Farts Game")
 
 facingAngle = randrange(0, 365)      
 
-game = Game(facingAngle, x, y, health)
+game = Game(x, y, health)
+player = game.player
 
 del WIDTH, HEIGHT

@@ -1,22 +1,22 @@
-from Move import move
+from Move import Move
 
 class Game:   
-    class Player:
-        def __init__(self, x, y, health=100):
+    class Player:      
+        def __init__(self, x, y, health=100, facingAngle=0):
             self.x = x
             self.y = y
             self.health = health
             self.facingAngle = facingAngle
-            self.move = move
+            self.move2 = Move()
                         
-        def Move(self, dir):
+        def move(self, dir):
             self.dir = dir            
             if self.dir == "up":
-                move.Up()
+                self.move2.Up()
             elif self.dir == "left":
-                move.Left()
+                self.move2.Left()
             elif self.dir == "right":
-                move.Right()
+                self.move2.Right()
             
         def checkCollision(self, x, y):
             return
@@ -24,8 +24,9 @@ class Game:
         def checkHealth(self):
             return
         
-    def __init__(self, facingAngle=0, x=0, y=0, playerHealth=100):
+    def __init__(self, x=0, y=0, playerHealth=100, facingAngle=0):
         self.x = x
         self.y = y
         self.playerHealth = playerHealth
-        self.player = Player(x, y, playerHealth)
+        self.facingAngle = facingAngle
+        self.player = self.Player(x, y, playerHealth, facingAngle)

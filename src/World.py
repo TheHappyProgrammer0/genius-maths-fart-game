@@ -20,18 +20,14 @@ class World:
         self.grassblock_name = grassblock_name
         self.dirtblock_name = dirtblock_name
         self.grassblock = pygame.image.load(# join(self.pictureFolder, self.grassblock_name)
-                                            "/home/pi/Genious Maths Farts Game/genius-maths-fart-game/pictures/grass_texture.jpeg"
+                                            "/home/pi/git/genius-maths-fart-game/src/pictures/grass_texture.jpeg"
         )
         self.dirtblock = pygame.image.load(
             # join(self.pictureFolder, self.dirtblock_name)
-            "/home/pi/Genious Maths Farts Game/genius-maths-fart-game/src/dirt_texture.jpeg"
+            "/home/pi/git/genius-maths-fart-game/src/pictures/dirt_texture.jpeg"
         )
         self.textureChoice = [self.grassblock, self.dirtblock]
         
     def Generate(self, x, y):
         display.blit(choice(self.textureChoice), (self.x, self.y))
         pygame.display.update()     
-
-del (
-    join, randrange, choice
-)
