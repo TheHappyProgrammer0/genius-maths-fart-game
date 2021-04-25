@@ -1,7 +1,4 @@
-from Game import player
-from Init import (
-    x, y
-)
+from Loop import player
 
 class Move:
     def Up(self):
@@ -18,5 +15,5 @@ class Move:
         global x
         x += 1
         player.checkCollision(x, y)
-        
-move2 = Move()
+   
+move = Move()     

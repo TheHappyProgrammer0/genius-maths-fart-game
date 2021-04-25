@@ -1,10 +1,10 @@
 import socket
 import pygame
 import Member
-from Game import game
 from World import World
+from Game import player
 from Init import (
-    WIDTH, HEIGHT, x, y, health
+    x, y, health
 )
 
 def Loop(in_game):
@@ -28,9 +28,12 @@ def Loop(in_game):
                     player.Move("right")
                 
 
-if __name__ == "__main__":  
-    player = game.Player(x, y, health)
+if __name__ == "__main__":     
     w = World(0, 0)
     w.Generate(0, 0)
     
+    del (
+        x, y, health, game
+    )
+        
     Loop(True)
