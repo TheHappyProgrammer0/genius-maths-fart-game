@@ -28,3 +28,5 @@ class Game:
         
 game = Game()  
 player = game.Player(x, y)
+
+#test
